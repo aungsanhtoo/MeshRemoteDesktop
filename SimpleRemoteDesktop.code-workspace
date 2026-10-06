@@ -1,0 +1,185 @@
+{
+	"folders": [
+		{
+			"name": "Simple Remote Desktop",
+			"path": "."
+		}
+	],
+
+	"settings": {
+		"C_Cpp.default.compilerPath": "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin/amd64/cl.exe",
+		"C_Cpp.default.intelliSenseMode": "windows-msvc-x64",
+		"C_Cpp.default.cStandard": "c11",
+		"C_Cpp.default.cppStandard": "c++14",
+		"C_Cpp.default.windowsSdkVersion": "10.0.10240.0",
+		"C_Cpp.default.includePath": [
+			"${workspaceFolder}/Dashboard/core",
+			"${workspaceFolder}/Dashboard/dashboard",
+			"C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include",
+			"C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/atlmfc/include",
+			"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/ucrt",
+			"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/um",
+			"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/shared",
+			"C:/Program Files (x86)/Windows Kits/10/Include/10.0.10240.0/winrt"
+		],
+		"C_Cpp.default.defines": [
+			"WIN32",
+			"_WIN64",
+			"_WINDOWS",
+			"_DEBUG",
+			"UNICODE",
+			"_UNICODE",
+			"_MSC_VER=1900"
+		],
+
+		"files.associations": {
+			"*.h": "cpp",
+			"*.vcxproj": "xml",
+			"*.vcxproj.filters": "xml",
+			"*.slnx": "xml",
+			"*.drawio": "xml"
+		},
+		"files.autoGuessEncoding": true,
+		"files.exclude": {
+			"**/*.obj": true,
+			"**/*.pdb": true,
+			"**/*.ilk": true,
+			"**/*.idb": true,
+			"**/*.ipch": true,
+			"**/*.tlog": true,
+			"**/.vs": true
+		},
+		"search.exclude": {
+			"**/x64": true,
+			"**/Debug": true,
+			"**/Release": true
+		},
+		"files.watcherExclude": {
+			"**/x64/**": true,
+			"**/Debug/**": true,
+			"**/Release/**": true
+		},
+		"editor.detectIndentation": true,
+		"terminal.integrated.defaultProfile.windows": "Command Prompt"
+	},
+
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Build Debug x64",
+				"type": "process",
+				"command": "C:/Program Files (x86)/MSBuild/14.0/Bin/MSBuild.exe",
+				"args": ["${workspaceFolder}/SimpleRemoteDesktop_VS2015.sln", "/m", "/nologo", "/v:minimal", "/p:Configuration=Debug", "/p:Platform=x64"],
+				"group": { "kind": "build", "isDefault": true },
+				"problemMatcher": "$msCompile",
+				"presentation": { "reveal": "always", "clear": true }
+			},
+			{
+				"label": "Build Release x64",
+				"type": "process",
+				"command": "C:/Program Files (x86)/MSBuild/14.0/Bin/MSBuild.exe",
+				"args": ["${workspaceFolder}/SimpleRemoteDesktop_VS2015.sln", "/m", "/nologo", "/v:minimal", "/p:Configuration=Release", "/p:Platform=x64"],
+				"group": "build",
+				"problemMatcher": "$msCompile",
+				"presentation": { "reveal": "always", "clear": true }
+			},
+			{
+				"label": "Rebuild Release x64",
+				"type": "process",
+				"command": "C:/Program Files (x86)/MSBuild/14.0/Bin/MSBuild.exe",
+				"args": ["${workspaceFolder}/SimpleRemoteDesktop_VS2015.sln", "/t:Rebuild", "/m", "/nologo", "/v:minimal", "/p:Configuration=Release", "/p:Platform=x64"],
+				"group": "build",
+				"problemMatcher": "$msCompile",
+				"presentation": { "reveal": "always", "clear": true }
+			},
+			{
+				"label": "Build Release x86",
+				"type": "process",
+				"command": "C:/Program Files (x86)/MSBuild/14.0/Bin/MSBuild.exe",
+				"args": ["${workspaceFolder}/SimpleRemoteDesktop_VS2015.sln", "/m", "/nologo", "/v:minimal", "/p:Configuration=Release", "/p:Platform=x86"],
+				"group": "build",
+				"problemMatcher": "$msCompile",
+				"presentation": { "reveal": "always", "clear": true }
+			},
+			{
+				"label": "Clean All",
+				"type": "process",
+				"command": "C:/Program Files (x86)/MSBuild/14.0/Bin/MSBuild.exe",
+				"args": ["${workspaceFolder}/SimpleRemoteDesktop_VS2015.sln", "/t:Clean", "/nologo", "/v:minimal", "/p:Configuration=Debug", "/p:Platform=x64"],
+				"problemMatcher": []
+			},
+			{
+				"label": "Deploy host.exe (Debug x64)",
+				"detail": "Copies Host Server.exe to x64\\Debug\\core\\host\\host.exe so the dashboard's Host page can start it",
+				"type": "shell",
+				"options": { "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] } },
+				"command": "if not exist \"${workspaceFolder}\\x64\\Debug\\core\\host\" mkdir \"${workspaceFolder}\\x64\\Debug\\core\\host\" && copy /Y \"${workspaceFolder}\\x64\\Debug\\Host Server.exe\" \"${workspaceFolder}\\x64\\Debug\\core\\host\\host.exe\"",
+				"dependsOn": "Build Debug x64",
+				"problemMatcher": []
+			},
+			{
+				"label": "Deploy host.exe (Release x64)",
+				"detail": "Copies Host Server.exe to x64\\Release\\core\\host\\host.exe so the dashboard's Host page can start it",
+				"type": "shell",
+				"options": { "shell": { "executable": "cmd.exe", "args": ["/d", "/c"] } },
+				"command": "if not exist \"${workspaceFolder}\\x64\\Release\\core\\host\" mkdir \"${workspaceFolder}\\x64\\Release\\core\\host\" && copy /Y \"${workspaceFolder}\\x64\\Release\\Host Server.exe\" \"${workspaceFolder}\\x64\\Release\\core\\host\\host.exe\"",
+				"dependsOn": "Build Release x64",
+				"problemMatcher": []
+			}
+		]
+	},
+
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Debug dashboard.exe (Debug x64)",
+				"type": "cppvsdbg",
+				"request": "launch",
+				"program": "${workspaceFolder}/x64/Debug/dashboard.exe",
+				"cwd": "${workspaceFolder}/x64/Debug",
+				"args": [],
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"preLaunchTask": "Deploy host.exe (Debug x64)"
+			},
+			{
+				"name": "Debug Host Server.exe (Debug x64) - start VS Code as Administrator",
+				"type": "cppvsdbg",
+				"request": "launch",
+				"program": "${workspaceFolder}/x64/Debug/Host Server.exe",
+				"cwd": "${workspaceFolder}/x64/Debug",
+				"args": [],
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"preLaunchTask": "Build Debug x64"
+			},
+			{
+				"name": "Run dashboard.exe (Release x64)",
+				"type": "cppvsdbg",
+				"request": "launch",
+				"program": "${workspaceFolder}/x64/Release/dashboard.exe",
+				"cwd": "${workspaceFolder}/x64/Release",
+				"args": [],
+				"stopAtEntry": false,
+				"console": "internalConsole",
+				"preLaunchTask": "Deploy host.exe (Release x64)"
+			},
+			{
+				"name": "Attach to process",
+				"type": "cppvsdbg",
+				"request": "attach",
+				"processId": "${command:pickProcess}"
+			}
+		]
+	},
+
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-vscode.cpptools-extension-pack",
+			"hediet.vscode-drawio"
+		]
+	}
+}

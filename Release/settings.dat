@@ -1,0 +1,18 @@
+# Simple Remote Desktop - Host Agent Configuration
+# This file must be next to Host Server.exe (or host.exe).
+# Lines starting with # are comments.
+
+# TCP ports (1024-65535). The controller must use the same values.
+video_port = 55000
+input_port = 55001
+audio_port = 55002
+
+# LAN = same network only. WAN = also try UPnP port forwarding on the router.
+connection = LAN
+
+# Encryption key. Remove the # and set a value to enable encryption;
+# the controller must enter the same key in "Host Key".
+# passphrase = MySecretKey
+
+# yes = offer to start the host automatically when Windows starts.
+startup = no

@@ -1,0 +1,35 @@
+﻿  pch.cpp
+  core.cpp
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.cpp(1): warning C4005: 'CORE_EXPORTS': macro redefinition
+  c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.cpp(1): note: command-line arguments:  see previous definition of 'CORE_EXPORTS'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(116): warning C4251: 'PendingFrame::jpeg': class 'std::vector<uint8_t,std::allocator<_Ty>>' needs to have dll-interface to be used by clients of struct 'PendingFrame'
+          with
+          [
+              _Ty=uint8_t
+          ]
+  c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(62): note: see declaration of 'std::vector<uint8_t,std::allocator<_Ty>>'
+          with
+          [
+              _Ty=uint8_t
+          ]
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(123): warning C4251: 'InputConnection::host': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'InputConnection'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(125): warning C4251: 'InputConnection::running': struct 'std::atomic<bool>' needs to have dll-interface to be used by clients of class 'InputConnection'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xxatomic(180): note: see declaration of 'std::atomic<bool>'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(139): warning C4251: 'VideoConnection::host': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'VideoConnection'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(140): warning C4251: 'VideoConnection::controller_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' needs to have dll-interface to be used by clients of class 'VideoConnection'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xstring(2633): note: see declaration of 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(142): warning C4251: 'VideoConnection::running': struct 'std::atomic<bool>' needs to have dll-interface to be used by clients of class 'VideoConnection'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\xxatomic(180): note: see declaration of 'std::atomic<bool>'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(145): warning C4251: 'VideoConnection::frame_callback': class 'std::function<void (PendingFrame)>' needs to have dll-interface to be used by clients of class 'VideoConnection'
+  c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(145): note: see declaration of 'std::function<void (PendingFrame)>'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(146): warning C4251: 'VideoConnection::status_callback': class 'std::function<void (std::string)>' needs to have dll-interface to be used by clients of class 'VideoConnection'
+  c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(146): note: see declaration of 'std::function<void (std::string)>'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(147): warning C4251: 'VideoConnection::pending_check_callback': class 'std::function<bool (void)>' needs to have dll-interface to be used by clients of class 'VideoConnection'
+  c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(147): note: see declaration of 'std::function<bool (void)>'
+c:\users\cmste\onedrive - uromedtech\documents\dev\mytest\simple-remote-desktop-main\simple-remote-desktop-main\dashboard\core\core.h(149): warning C4251: 'VideoConnection::recv_thread': class 'std::thread' needs to have dll-interface to be used by clients of class 'VideoConnection'
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\thread(30): note: see declaration of 'std::thread'
+     Creating library C:\Users\CMSte\OneDrive - UroMedTech\Documents\Dev\MyTest\Simple-Remote-Desktop-main\Simple-Remote-Desktop-main\x64\Debug\core.lib and object C:\Users\CMSte\OneDrive - UroMedTech\Documents\Dev\MyTest\Simple-Remote-Desktop-main\Simple-Remote-Desktop-main\x64\Debug\core.exp
+  core.vcxproj -> C:\Users\CMSte\OneDrive - UroMedTech\Documents\Dev\MyTest\Simple-Remote-Desktop-main\Simple-Remote-Desktop-main\x64\Debug\core.dll
+  core.vcxproj -> C:\Users\CMSte\OneDrive - UroMedTech\Documents\Dev\MyTest\Simple-Remote-Desktop-main\Simple-Remote-Desktop-main\x64\Debug\core.pdb (Full PDB)
