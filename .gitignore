@@ -1,0 +1,32 @@
+# Visual Studio build output
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+ipch/
+*.obj
+*.pch
+*.pdb
+*.ipdb
+*.iobj
+*.idb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+*.tlog
+*.lastbuildstate
+*.log
+
+# Visual Studio IDE state
+.vs/
+*.VC.db
+*.VC.opendb
+*.sdf
+*.opensdf
+*.suo
+*.user
+
+# Host runtime log
+remote_host.log

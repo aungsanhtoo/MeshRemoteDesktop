@@ -1,7 +1,0 @@
-HOST: Config OK — video=55000 input=55001 audio=55002 mode=LAN startup=no enc=off
-HOST: Firewall rule added/updated for ports 55000, 55001, 55002
-HOST: Listening on video=55000 input=55001
-HOST: LAN mode — skipping UPnP port forwarding
-
-HOST: Waiting for controller...
-AUDIO: Listening on port 55002
